@@ -1,0 +1,18 @@
+.Logo {
+	height: 10%;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    border: 1px solid black;
+    padding: 3px;
+}
+
+
+
+/* pay attention this is the height of the image:  */
+/* and above is the height of the container that holds the image!!  */
+.Logo > img {
+    height: 100%;
+}
+
+/* מגניב זה מכווץ את התמונה לשם */

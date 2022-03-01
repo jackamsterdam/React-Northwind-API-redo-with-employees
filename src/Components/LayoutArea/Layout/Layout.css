@@ -8,6 +8,7 @@
 }
 /* with border box it gets smaller  */
 /* .Layout is the entire page basically but .Layout > * is the header footer aside and main */
+/* give a border to all those 4 parts as well  */
  .Layout, .Layout > * {  
     border: 2px solid black;
 }
