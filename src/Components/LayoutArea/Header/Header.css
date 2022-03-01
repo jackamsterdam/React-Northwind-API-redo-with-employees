@@ -1,0 +1,13 @@
+.Header {
+	height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* asaf  why do we need height */
+/* height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center; */

@@ -1,0 +1,24 @@
+.Menu {
+    /* height: 100%; */
+	display: flex;
+    flex-direction: column;
+   
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.Menu > a {
+    margin-top: 20px;
+    /* border: 10px solid black; */
+}
+
+/* asaf:  */
+/* .Menu {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.Menu > * {
+    margin-top: 20px
+} */

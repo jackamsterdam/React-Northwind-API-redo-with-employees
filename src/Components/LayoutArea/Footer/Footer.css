@@ -1,0 +1,20 @@
+.Footer {
+    /* why do i need height ?  */
+    height: 100%;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* you see this only works if you have something inside of it !!!  so our p element is inside so that will be the flex items */
+
+/* asaf:/ */
+/* .Footer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} */
+
+
+

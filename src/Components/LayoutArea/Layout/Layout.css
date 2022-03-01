@@ -1,0 +1,22 @@
+.Layout {
+    height: 100%;
+	display: grid;
+    box-sizing: border-box; 
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 15% 80% 5%;
+
+}
+/* with border box it gets smaller  */
+/* .Layout is the entire page basically but .Layout > * is the header footer aside and main */
+ .Layout, .Layout > * {  
+    border: 2px solid black;
+}
+
+header , footer{
+    grid-column: span 6;
+}
+
+main {
+    grid-column: span 5;
+    overflow: auto;
+}
