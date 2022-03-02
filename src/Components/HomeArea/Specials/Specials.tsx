@@ -12,7 +12,8 @@ function Specials(): JSX.Element {
                <br/>
                {isWeekend() ? <span>Pizza</span>: <span>Pasta</span>}
 {/* body1 default  */}
-               {isWeekend() ? <Typography>Pizza</Typography>: <Typography>Pasta</Typography>}
+             <br/>
+               {isWeekend() ? <Typography variant="overline">Pizza</Typography>: <Typography variant="overline">Pasta</Typography>}
            </Typography>
 
         </div>

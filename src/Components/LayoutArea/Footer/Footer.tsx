@@ -5,7 +5,7 @@ function Footer(): JSX.Element {
     return (
         //display flex is on the footer so all items inside will be flex items like the p element
         <div className="Footer">
-			<Typography>All Rights Reserved to Jack Redo &copy;</Typography>
+			<Typography>All Rights Reserved by Jack Redo &copy;</Typography>
 			{/* <p>All Rights Reserved to Jack Redo &copy;</p> */}
         </div>
     );

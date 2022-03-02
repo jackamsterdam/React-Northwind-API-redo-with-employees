@@ -4,6 +4,7 @@ import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import Menu from "../Menu/Menu";
 import Home from "../../HomeArea/Home/Home";
+import Routing from "../Routing/Routing";
 
 
 function Layout(): JSX.Element {
@@ -17,17 +18,17 @@ function Layout(): JSX.Element {
                 <Menu/>
             </aside>
             <main>
-                <Home/>
+                                 <Routing/>
             </main>
-            {/* <footer  style={{border: "5px solid black"}}> same like .Layout > * */}
+           
             <footer>
               <Footer/>
             </footer>
 
         </div>
 
-
-    );
+);
 }
+{/* <footer  style={{border: "5px solid black"}}> same like .Layout > * */}
 
 export default Layout;
