@@ -21,10 +21,27 @@ class ProductsService {
      }
 
      async addNewProduct(product: ProductModel):Promise<ProductModel> {
-          const response = await axios.post<ProductModel>(config.productsUrl, product)
+         // Convert our product to FormData:
+          const formData = new FormData()
+
+          formData.append("name", product.name)
+          formData.append("price", product.price.toString())
+          formData.append("stock", product.stock.toString())
+          formData.append("image", product.image.item(0))
+          console.log('product.name', product.name)
+          console.log("product.image.item(0)", product.image.item(0));
+          // File {name: '7.jpg', lastModified: 1645730158175, lastModifiedDate: Thu Feb 24 2022 21:15:58 GMT+0200 (Israel Standard Time), webkitRelativePath: '', size: 15606, …}
+          console.log("product.image", product.image);  //FileList {0: File, length: 1}
+
+          
+          const response = await axios.post<ProductModel>(config.productsUrl, formData)
           const addedProduct = response.data
           return addedProduct
 
+     }
+
+     async deleteOneProduct(id: number):Promise<void> {
+          await axios.delete(config.productsUrl + id)
      }
 
 

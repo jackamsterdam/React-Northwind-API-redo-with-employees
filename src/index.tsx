@@ -4,8 +4,11 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import Layout from "./Components/LayoutArea/Layout/Layout";
 import { BrowserRouter } from "react-router-dom";
-import notify from "./Services/NotifyService";
-notify.success('program loaded ')
+
+
+// document.title="Northwind | Redo"
+
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>

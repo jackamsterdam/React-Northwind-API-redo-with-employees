@@ -4,6 +4,7 @@ class ProductModel {   //DATABASE MYSQL:   (node js is same like here)
     price: number =0  //UnitPrice AS price
     stock: number = 0  //UnitsInStock AS stock
     imageName: string = '' //CONCAT(ProductId, '.jpg') AS imageName
+    image: FileList = null
 }
 
 export default ProductModel

@@ -6,6 +6,9 @@ import Specials from "../Specials/Specials";
 import Sales from "../Sales/Sales";
 import BestSeller from "../BestSeller/BestSeller";
 import Clock from "../Clock/Clock";
+import Hours from "../Hours/Hours";
+import RandomColor from "../RandomColor/RandomColor";
+import Suggestions from "../Suggestions/Suggestions";
 
 function Home(): JSX.Element {
     return (
@@ -25,6 +28,12 @@ function Home(): JSX.Element {
              <BestSeller/> 
              {/* Side Effects  */}
              <Clock/>
+ {/* CSS Modules  */}
+             <Hours />
+
+             {/* Class Components  */}
+             <Suggestions header="Cool Suggestions"/>
+             <RandomColor/>
 
         </div>
     );
