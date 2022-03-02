@@ -1,5 +1,5 @@
 import axios from 'axios'
-import ProductModel from '../Model/ProductModel'
+import ProductModel from '../Models/ProductModel'
 import config from '../Utils/Config'
 
 class ProductsService {
@@ -18,6 +18,13 @@ class ProductsService {
           const response = await axios.get<ProductModel>(config.productsUrl + id)
           const product = response.data
           return product
+     }
+
+     async addNewProduct(product: ProductModel):Promise<ProductModel> {
+          const response = await axios.post<ProductModel>(config.productsUrl, product)
+          const addedProduct = response.data
+          return addedProduct
+
      }
 
 

@@ -21,6 +21,7 @@ function Routing(): JSX.Element {
       <Route path="/products" element={<ProductsList />} />
       {/* Route paramter the :id is the Route parameter  */}
       <Route path="/products/details/:id" element={<ProductDetails />} />
+      {/* Handle Form  */}
       <Route path ="/products/new" element={<AddProduct/>}/>
 
 

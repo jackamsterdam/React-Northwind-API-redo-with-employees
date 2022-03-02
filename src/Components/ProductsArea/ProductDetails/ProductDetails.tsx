@@ -3,7 +3,7 @@ import { Send } from "@material-ui/icons";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useNavigate, useParams } from "react-router-dom";
-import ProductModel from "../../../Model/ProductModel";
+import ProductModel from "../../../Models/ProductModel";
 import notify from "../../../Services/NotifyService";
 import productsService from "../../../Services/productsService";
 import config from "../../../Utils/Config";
@@ -63,6 +63,7 @@ function ProductDetails(): JSX.Element {
              <NavLink to='/products'>Go Back</NavLink>
              <br/>
              <br/>
+             {/* BTw Navigate is different than useNavigate() */}
              <Button onClick={() => navigate(-1)} color="primary" variant="contained" startIcon={<Send/>}>Go Back</Button>
            
             </>

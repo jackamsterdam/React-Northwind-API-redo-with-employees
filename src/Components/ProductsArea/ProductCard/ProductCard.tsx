@@ -1,5 +1,5 @@
 import "./ProductCard.css";
-import ProductModel from '../../../Model/ProductModel'
+import ProductModel from '../../../Models/ProductModel'
 import config from "../../../Utils/Config";
 import { NavLink } from "react-router-dom";
 

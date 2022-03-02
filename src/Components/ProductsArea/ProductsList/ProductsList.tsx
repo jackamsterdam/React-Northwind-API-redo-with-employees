@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import ProductModel from "../../../Model/ProductModel";
+import ProductModel from "../../../Models/ProductModel";
 import notify from "../../../Services/NotifyService";
 import productsService from "../../../Services/productsService";
 import ProductCard from '../ProductCard/ProductCard'
 import Loading from '../../SharedArea/Loading/Loading'
+import { NavLink } from "react-router-dom";
+import './ProductsList.css'
 
 function ProductsList(): JSX.Element {
     // useState<S> is a generic behind the scences 

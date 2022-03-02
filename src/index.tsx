@@ -4,7 +4,8 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import Layout from "./Components/LayoutArea/Layout/Layout";
 import { BrowserRouter } from "react-router-dom";
-
+import notify from "./Services/NotifyService";
+notify.success('program loaded ')
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
