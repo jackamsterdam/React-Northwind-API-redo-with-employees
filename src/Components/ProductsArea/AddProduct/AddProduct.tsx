@@ -14,7 +14,7 @@ function AddProduct(): JSX.Element {
 const {register, handleSubmit, formState} = useForm<ProductModel>()
 const navigate = useNavigate()
 
-
+    
 async function submit(product: ProductModel) {
     try {
 
@@ -70,7 +70,9 @@ async function submit(product: ProductModel) {
               })} />
               <Typography variant="caption">{formState.errors.image?.message}</Typography>
               {/* startIcon={<Send/>} */}
-              <Button fullWidth color="primary" variant="contained" >Add</Button>
+
+               {/* dont forget type submit  */}
+              <Button type="submit" fullWidth color="primary" variant="contained" >Add</Button>
 
 
             </form>	
@@ -78,7 +80,7 @@ async function submit(product: ProductModel) {
             <NavLink to="/products">Go Back</NavLink>
             <br/>
             <br/>
-            <Button color="primary" variant="contained" fullWidth onClick={() =>navigate(-1)}>Go Back</Button>
+            <Button  color="primary" variant="contained" fullWidth onClick={() =>navigate(-1)}>Go Back</Button>
         </div>
     );
 }

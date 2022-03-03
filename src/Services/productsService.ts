@@ -33,11 +33,31 @@ class ProductsService {
           // File {name: '7.jpg', lastModified: 1645730158175, lastModifiedDate: Thu Feb 24 2022 21:15:58 GMT+0200 (Israel Standard Time), webkitRelativePath: '', size: 15606, …}
           console.log("product.image", product.image);  //FileList {0: File, length: 1}
 
-          
+
           const response = await axios.post<ProductModel>(config.productsUrl, formData)
           const addedProduct = response.data
           return addedProduct
 
+     }
+
+     async updateProduct(product: ProductModel):Promise<ProductModel> {
+          const formData = new FormData()
+          formData.append('name', product.name)
+          formData.append('price', product.price.toString())
+          formData.append('stock', product.stock.toString())
+          formData.append('image', product.image.item(0))
+                                                                     //dont forget to send formDAta ofcourse 
+          const response = await axios.put<ProductModel>(config.productsUrl + product.id, formData)
+          const updatedProduct = response.data
+          return updatedProduct
+
+          // in node: 
+          // router.put('/products/:id', async (request: Request, response: Response, next: NextFunction) => {
+          //      try {
+          //          const id = +request.params.id
+          //          request.body.id = id  //even if it had in body i dont care i put it in the body 
+          //          //  ברגע שאתה מוסיף לו מעפפיין שאין לו אז גקטסרפט יוצרת 
+          //          const product = new ProductModel(request.body)
      }
 
      async deleteOneProduct(id: number):Promise<void> {

@@ -1,5 +1,5 @@
 import { Button, Typography } from "@material-ui/core";
-import { Send } from "@material-ui/icons";
+import { Clear, Send } from "@material-ui/icons";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useNavigate, useParams } from "react-router-dom";
@@ -77,7 +77,7 @@ function ProductDetails(): JSX.Element {
                     <img src={config.productsImageUrl + product.imageName} />
                     <br />
                     <br />
-                
+
                     <NavLink to='/products'>Go Back</NavLink>
                     <br />
                     <br />
@@ -86,6 +86,8 @@ function ProductDetails(): JSX.Element {
                     <br />
                     <br />
                     <Button color="secondary" variant="contained" startIcon={<Send />} onClick={deleteProduct}>Delete Product</Button>
+                                                                                                                     {/* product.id and id should be the same  */}
+                    <Button color="secondary" variant="contained"  onClick={() => navigate('/products/edit/' + product.id)}>Edit</Button>
 
                 </>
 

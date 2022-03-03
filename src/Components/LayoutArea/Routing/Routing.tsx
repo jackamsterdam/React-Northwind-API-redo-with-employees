@@ -5,6 +5,7 @@ import About from '../../AboutArea/About/About'
 import ProductsList from '../../ProductsArea/ProductsList/ProductsList'
 import ProductDetails from '../../ProductsArea/ProductDetails/ProductDetails'
 import AddProduct from '../../ProductsArea/AddProduct/AddProduct'
+import UpdateProduct from '../../ProductsArea/UpdateProduct/UpdateProduct'
 
 function Routing(): JSX.Element {
   //! where does / suupsoded to be??????????????????? top or bottom 
@@ -23,8 +24,10 @@ function Routing(): JSX.Element {
       <Route path="/products/details/:id" element={<ProductDetails />} />
       {/* Handle Form  */}
       <Route path ="/products/new" element={<AddProduct/>}/>
-
-
+      {/* Update Product */}
+      <Route path ="/products/edit/:id" element={<UpdateProduct/>} />
+       
+    
       <Route path="/about" element={<About />} />
 
 
