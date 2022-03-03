@@ -1,22 +1,34 @@
 import axios from 'axios'
 import ProductModel from '../Models/ProductModel'
 import config from '../Utils/Config'
+import store from '../Redux/Store'
+import { addProductAction, deleteProductAction, fetchProductsAction, updateProductAction } from '../Redux/ProductsState'
 
 class ProductsService {
  
 
 //you forgot ProductModel[] collection []   and dont put word function! becase you are in a class
      async getAllProducts():Promise<ProductModel[]> {
+          if (store.getState().productsState.products.length === 0){
         //  await axios.get<ProductModel[]>('http://localhost:3001/api/products')
          const response = await axios.get<ProductModel[]>(config.productsUrl)
          const products = response.data 
 
-         return products
+         store.dispatch(fetchProductsAction(products))
+          }
+
+     //     return products
+     return store.getState().productsState.products
      }
 
      async getOneProduct(id: number):Promise<ProductModel> {
-          const response = await axios.get<ProductModel>(config.productsUrl + id)
-          const product = response.data
+// so either get product from store or get product from axios 
+          let product = store.getState().productsState.products.find(p => p.id === id)
+          if (!product) {
+               const response = await axios.get<ProductModel>(config.productsUrl + id)
+               product = response.data
+          }
+          
           return product
      }
 
@@ -36,6 +48,7 @@ class ProductsService {
 
           const response = await axios.post<ProductModel>(config.productsUrl, formData)
           const addedProduct = response.data
+          store.dispatch(addProductAction(addedProduct))
           return addedProduct
 
      }
@@ -49,6 +62,7 @@ class ProductsService {
                                                                      //dont forget to send formDAta ofcourse 
           const response = await axios.put<ProductModel>(config.productsUrl + product.id, formData)
           const updatedProduct = response.data
+          store.dispatch(updateProductAction(updatedProduct))
           return updatedProduct
 
           // in node: 
@@ -61,7 +75,9 @@ class ProductsService {
      }
 
      async deleteOneProduct(id: number):Promise<void> {
+   
           await axios.delete(config.productsUrl + id)
+          store.dispatch(deleteProductAction(id))
      }
 
 

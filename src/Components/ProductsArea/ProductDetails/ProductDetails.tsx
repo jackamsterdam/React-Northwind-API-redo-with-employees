@@ -86,8 +86,8 @@ function ProductDetails(): JSX.Element {
                     <br />
                     <br />
                     <Button color="secondary" variant="contained" startIcon={<Send />} onClick={deleteProduct}>Delete Product</Button>
-                                                                                                                     {/* product.id and id should be the same  */}
-                    <Button color="secondary" variant="contained"  onClick={() => navigate('/products/edit/' + product.id)}>Edit</Button>
+                               {/* product.id and id should be the same  */}
+                    <Button color="secondary" variant="contained" startIcon={<Clear/>} onClick={() => navigate('/products/edit/' + product.id)}>Edit</Button>
 
                 </>
 
