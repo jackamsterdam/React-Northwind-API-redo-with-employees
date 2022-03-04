@@ -7,11 +7,26 @@ import ProductDetails from '../../ProductsArea/ProductDetails/ProductDetails'
 import AddProduct from '../../ProductsArea/AddProduct/AddProduct'
 import UpdateProduct from '../../ProductsArea/UpdateProduct/UpdateProduct'
 
+import Register from '../../AuthArea/Register/Register'
+import Login from '../../AuthArea/Login/Login'
+import Logout from '../../AuthArea/Logout/Logout'
+
 function Routing(): JSX.Element {
   //! where does / suupsoded to be??????????????????? top or bottom 
 
   return (
     <Routes>
+ {/* basically the Route just reads whats above and goes to theat component.. we use Navlinks to change the route on top and then route sees the route on top and goes to that compnent  */}
+       <Route path="/register" element={<Register/>}/>
+       <Route path="/login" element={<Login />} />
+       <Route path="/logout" element={<Logout />} />
+
+
+
+
+
+
+
       <Route path="/home" element={<Home />} />
       {/* Default path  */}
       {/* <Route path='/' element={<Navigate to="/home"/>} /> */}
