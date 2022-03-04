@@ -11,6 +11,11 @@ import Register from '../../AuthArea/Register/Register'
 import Login from '../../AuthArea/Login/Login'
 import Logout from '../../AuthArea/Logout/Logout'
 
+import EmployeesList from '../../EmployeesArea/EmployeesList/EmployeesList'
+import EmployeeDetails from '../../EmployeesArea/EmployeeDetails/EmployeeDetails'
+import AddEmployee from '../../EmployeesArea/AddEmployee/AddEmployee'
+import UpdateEmployee from '../../EmployeesArea/UpdateEmployee/UpdateEmployee'
+
 function Routing(): JSX.Element {
   //! where does / suupsoded to be??????????????????? top or bottom 
 
@@ -41,6 +46,11 @@ function Routing(): JSX.Element {
       <Route path ="/products/new" element={<AddProduct/>}/>
       {/* Update Product */}
       <Route path ="/products/edit/:id" element={<UpdateProduct/>} />
+
+      <Route path="/employees" element={<EmployeesList/>}/>
+      <Route path="/employees/new" element={<AddEmployee />} />
+      <Route path="/employees/details/:id" element={<EmployeeDetails/>} />
+      <Route path="/employees/edit/:id" element={<UpdateEmployee/>} />
        
     
       <Route path="/about" element={<About />} />

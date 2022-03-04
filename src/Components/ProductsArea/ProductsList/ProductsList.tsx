@@ -9,7 +9,7 @@ import './ProductsList.css'
 
 function ProductsList(): JSX.Element {
     // useState<S> is a generic behind the scences 
-    const [products, SetProducts] = useState<ProductModel[]>([])
+    const [products, setProducts] = useState<ProductModel[]>([])
 
 
 
@@ -26,7 +26,7 @@ function ProductsList(): JSX.Element {
         (async function () {
             try {
                 const products = await productsService.getAllProducts()
-                SetProducts(products)
+                setProducts(products)
             } catch (err:any) {
                 notify.error(err)
             }
@@ -40,10 +40,11 @@ function ProductsList(): JSX.Element {
     return (
 
         <div className="ProductsList">
+            
+            {products.length === 0 && <Loading/>}
 
             <NavLink to="/products/new">➕</NavLink>
 
-            {products.length === 0 && <Loading/>}
             {products.map(product => <ProductCard key={product.id} product={product}/>)}
         </div>
     );

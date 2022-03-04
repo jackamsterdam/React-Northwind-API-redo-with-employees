@@ -76,9 +76,7 @@ function UpdateProduct(): JSX.Element {
 
                 <Typography variant="h4">Edit Product</Typography>
 
-                <TextField  InputLabelProps={{
-            shrink: true,
-          }} type="text" label="name" className="TextBox" variant="outlined" {...register('name', {
+                <TextField  InputLabelProps={{shrink: true,}} type="text" label="name" className="TextBox" variant="outlined" {...register('name', {
                     required: { value: true, message: 'Missing product name' }
                 })} />
                 <Typography variant="caption">{formState.errors.name?.message}</Typography>

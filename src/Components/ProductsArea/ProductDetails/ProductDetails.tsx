@@ -62,11 +62,12 @@ function ProductDetails(): JSX.Element {
 
             {/* on start product is undefined so !undefined which is true so display Loading gif */}
 
+            {!product && <Loading />}
+            
             {product &&
                 <>
                     <Typography variant="h4">Product Details</Typography>
 
-                    {!product && <Loading />}
 
                     <Typography variant="h5">Name: {product.name}</Typography>
                     <Typography variant="h5">Price: {product.price}</Typography>
@@ -87,6 +88,8 @@ function ProductDetails(): JSX.Element {
                     <br />
                     <Button color="secondary" variant="contained" startIcon={<Send />} onClick={deleteProduct}>Delete Product</Button>
                                {/* product.id and id should be the same  */}
+
+
                     <Button color="secondary" variant="contained" startIcon={<Clear/>} onClick={() => navigate('/products/edit/' + product.id)}>Edit</Button>
 
                 </>

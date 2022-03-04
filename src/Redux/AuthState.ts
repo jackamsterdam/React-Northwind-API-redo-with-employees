@@ -7,11 +7,21 @@ export class AuthState {
 
     constructor() {
          this.token = localStorage.getItem('token')
+        //  token: 
+        //  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo0LCJmaXJzdE5hbWUiOiJqYWNrIiwibGFzdE5hbWUiOiJhbXN0ZXJkYW0iLCJ1c2VybmFtZSI6ImphY2sifSwiaWF0IjoxNjQ2NDA0NDI5LCJleHAiOjE2NDY0MjI0Mjl9.To3SmCgiwSIkcu0XxZXZOQbynSquUUg0IZ14Rp-Qiz8"
+
          if (this.token) {
             
 
              const encodedObject:any = jwtDecode(this.token)
              this.user = encodedObject.user
+// user: 
+            //  {
+            //     "id": 4,
+            //     "firstName": "jack",
+            //     "lastName": "amsterdam",
+            //     "username": "jack"
+            //   }
          }
     }
 }
@@ -56,7 +66,14 @@ export function authReducer(currentState = new AuthState(), action: AuthAction):
             localStorage.removeItem('token')
     }
 
-
+    // authState this gets crossed out in redux store when logout 
+    // token"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo0LCJmaXJzdE5hbWUiOiJqYWNrIiwibGFzdE5hbWUiOiJhbXN0ZXJkYW0iLCJ1c2VybmFtZSI6ImphY2sifSwiaWF0IjoxNjQ2NDA0NDI5LCJleHAiOjE2NDY0MjI0Mjl9.To3SmCgiwSIkcu0XxZXZOQbynSquUUg0IZ14Rp-Qiz8"null
+    // user{
+    //   "id": 4,
+    //   "firstName": "jack",
+    //   "lastName": "amsterdam",
+    //   "username": "jack"
+    // }
 
     return newState
 }

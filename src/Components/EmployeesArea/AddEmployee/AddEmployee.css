@@ -1,21 +1,21 @@
-.Login {
+.AddEmployee {
 	width: 450px;
     margin: 20px;
     padding: 20px;
 }
-/* //input is the same  */
-.Login .TextBox {
+
+
+.AddEmployee .TextBox {
     width: 100%;
     margin: 5px 0;
-    /* margin: 0 0 20px 0; */
 }
 
-.Login span {
+.AddEmployee span {
     color: red;
     position: absolute;
     margin: 0 20px;
 }
 
-.Login button {
+.AddEmployee button {
     padding: 20px;
 }
